@@ -1,5 +1,4 @@
 # Databricks notebook source
-# MAGIC 
 # MAGIC %md
 # MAGIC **Define Data Paths**
 
@@ -10,7 +9,7 @@ username = "dbacademy"
 
 # COMMAND ----------
 
-health_tracker = f"/dbacademy/{username}/lakehouse-with-delta-lake-dd/health-tracker/"
+health_tracker = f"/dbfs/dbacademy/{username}/lakehouse-with-delta-lake-dd/health-tracker/"
 
 # COMMAND ----------
 

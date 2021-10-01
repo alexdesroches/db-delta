@@ -1,5 +1,4 @@
 # Databricks notebook source
-
 from pyspark.sql.session import SparkSession
 from urllib.request import urlretrieve
 import time
@@ -11,8 +10,10 @@ def retrieve_data(year: int, month: int, raw_path: str, is_late: bool = False) -
     file, dbfsPath, driverPath = _generate_file_handles(year, month, raw_path, is_late)
     uri = BASE_URL + file
 
-    urlretrieve(uri, file)
-    dbutils.fs.mv(driverPath, dbfsPath)
+    urlretrieve(uri, driverPath)
+    print("Driver Path: "+driverPath)
+    print("DBFS Path: "+dbfsPath)
+    dbutils.fs.mv("file:///"+driverPath, dbfsPath)
     return True
 
 
@@ -27,7 +28,9 @@ def _generate_file_handles(year: int, month: int, raw_path: str, is_late: bool):
         dbfsPath += "late/"
     dbfsPath += file
 
-    driverPath = "file:/databricks/driver/" + file
+    # driverPath = "file:/databricks/driver/" + file
+    print(file)
+    driverPath = "/databricks/driver/" + file
 
     return file, dbfsPath, driverPath
 

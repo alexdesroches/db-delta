@@ -1,5 +1,4 @@
 # Databricks notebook source
-
 from pyspark.sql import DataFrame
 from pyspark.sql.session import SparkSession
 from pyspark.sql.functions import col, from_unixtime

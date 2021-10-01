@@ -1,5 +1,4 @@
 # Databricks notebook source
-# MAGIC 
 # MAGIC %md-sandbox
 # MAGIC 
 # MAGIC <div style="text-align: center; line-height: 0; padding-top: 9px;">
@@ -37,15 +36,15 @@
 
 # COMMAND ----------
 
-# MAGIC %run ./00_ingest_raw.py
+# MAGIC %run ./00_ingest_raw
 
 # COMMAND ----------
 
-# MAGIC %run ./01_review_and_visualize.py
+# MAGIC %run ./01_review_and_visualize
 
 # COMMAND ----------
 
-# MAGIC %run ./02_creating_a_parquet_table.py
+# MAGIC %run ./02_creating_a_parquet_table
 
 # COMMAND ----------
 
